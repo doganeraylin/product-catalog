@@ -1,0 +1,81 @@
+
+
+.loginPageContainer {
+    display: flex;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.introContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 900px;
+    height: 100vh;
+    background: linear-gradient(#0673e3, #022181,)
+}
+
+.formContainer {
+  width: 400px;
+}
+
+.loginContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 100px;
+}
+
+.storeName,
+.description {
+    margin-left: 150px;
+    color: white;
+}
+
+.storeName {
+    font-size: 40px;
+}
+
+.description {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.email,
+.password,
+.loginBtn {
+    display: block;
+}
+
+.loginTitle {
+    font-size: 33px;
+    font-weight: bold;
+}
+
+.loginSubtitle {
+    font-size: 25px;
+    margin-bottom: 35px;
+}
+
+.email,
+.password,
+.loginBtn
+{
+    padding: 20px 60px;
+    margin-bottom: 15px;
+    border-radius: 30px;
+    border: 1px solid gainsboro;
+}
+
+.loginBtn {
+    background-color: #4299e1;
+    color: white;
+}
+
+.forgotPassword {
+  width: 300px;
+  text-align: center;
+  color: #979797;
+}
+
+
+
