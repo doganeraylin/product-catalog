@@ -21,7 +21,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: 100px;
+    margin-left: 150px;
 }
 
 .storeName,
@@ -89,5 +89,132 @@
 }
 
 
+// Media Queries 
+
+@media screen and (max-width:1000px) {
+   .storeName,
+   .description {
+        margin-left: 50px;
+   }
+   .formContainer {
+        max-width: 200px;
+   }
+    .email,
+    .password,
+    .loginBtn,
+    .fullName,
+    .phoneNumber {
+        padding: 15px 45px;
+    }
+
+    .loginPageContainer {
+        max-width: 800px;
+    }
+
+    .faIcon {
+        top: 15px;
+        left: 20px;
+    }
+
+    .loginBtn {
+        width: 265px;
+    }
+
+    .loginTitle {
+        font-size: 25px;
+        font-weight: bold;
+    }
+    
+    .loginSubtitle {
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+ 
+}
 
 
+@media screen and (max-width: 800px){
+
+    .loginContainer {
+        margin-right: 150px;
+    }
+
+    .storeName,
+    .description {
+         margin-left: 30px;
+    }
+
+    .storeName {
+        font-size: 30px;
+    }
+
+    .description {
+        font-size: 15px;
+    }
+
+    .email,
+    .password,
+    .loginBtn,
+    .fullName,
+    .phoneNumber {
+        padding: 10px 35px;
+    }
+
+    .loginBtn {
+        width: 240px;
+    }
+
+    .faIcon {
+        top: 10px;
+        left: 15px;
+    }   
+}
+
+@media screen and (max-width: 600px) {
+    .introContainer {
+        border: 2px solid magenta;
+        padding-right: 50px;
+    }
+
+    .loginContainer {
+        margin-left: 50px;
+    }
+
+}
+
+@media  screen and (max-width: 500px) {
+    .loginPageContainer {
+        flex-direction: column;
+    }
+
+    .introContainer {
+        max-height: 200px;
+        text-align: center;
+    }
+
+    .loginContainer {
+        width: 800px;
+        align-items: center;
+        margin-top: 50px;
+        border: 2px solid green;
+    }
+
+    .email,
+    .password,
+    .loginBtn,
+    .fullName,
+    .phoneNumber {
+        padding: 20px 60px;
+    }
+
+    .loginBtn {
+        width: 290px;
+    }
+
+    .faIcon {
+        top: 20px;
+        left: 30px;
+    }
+
+
+}
