@@ -1,9 +1,7 @@
 import styles from "./Login.module.scss"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-    faEnvelope,
-    faLock
-  } from "@fortawesome/free-solid-svg-icons"
+import { faLock } from "@fortawesome/free-solid-svg-icons"
+import { faEnvelope } from "@fortawesome/free-regular-svg-icons"
 
 const Login = () => {
     return (
@@ -36,10 +34,13 @@ const Login = () => {
                         </div>
                         <button type="submit" className={styles.loginBtn}>Login</button>
                     </form>
-                </div>  
-                <p className={styles.forgotPassword}>Forgot Password</p>
-                <p className={styles.forgotPassword}>Remember Me</p>
-
+                </div>
+                <div className={styles.forgotAndRemember}>
+                    <p className={styles.forgotPassword}>Forgot Password</p>
+                    <label className={styles.rememberMe}>
+                        <input type="checkbox" className={styles.rememberMe}/> Remember me
+                    </label>
+                </div>
             </div>
         </div>
     )

@@ -2,11 +2,10 @@ import styles from "./Register.module.scss"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
     faUser,
-    faEnvelope,
     faLock,
     faPhone
-
   } from "@fortawesome/free-solid-svg-icons"
+  import { faEnvelope } from "@fortawesome/free-regular-svg-icons"
 
 const Register = () => {
     return (
@@ -59,7 +58,6 @@ const Register = () => {
                                 className={styles.password}>
                             </input>
                         </div>
-                       
                         <div className={styles.inputContainer}>
                             <FontAwesomeIcon icon={faLock} className={styles.faIcon}/>
                             <input 
