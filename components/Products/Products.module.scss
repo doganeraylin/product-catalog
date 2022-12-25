@@ -1,12 +1,15 @@
+@use "../../styles/variables.module.scss" as *;
+
 .productsContainer{
     display: flex;
     justify-content: center;
     text-align: center;
     max-width: 300px;
     margin: 50px 80px;
-    border: 1px solid #cecccc;
+    padding: 50px 0px 0px;
+    border: 1px solid $border-gray;
     border-radius: 30px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    position: relative;
 }
 
 
@@ -14,18 +17,18 @@
     max-width: 100%;
     width: 200px;
     margin: 5px;
-    box-shadow: 3px 4px 3px 4px #b6b6b6;
+    box-shadow: 3px 4px 3px 4px $shadow-gray;
 }
 
 .productName {
     width: 200px;
-    margin: 0 auto;
+    margin: 10px auto;
   
 }
 
 .productPrice {
     font-size: 18px;
-    color: #0773e0;
+    color: $blue;
     margin-top: 10px;
 }
 
@@ -34,3 +37,16 @@
     font-weight: bold;
     margin-bottom: 15px;
 }
+
+.heartIconRegular {
+    position: absolute;
+    right: 25px;
+    top: 20px;
+    font-size: 22px;
+    color: $heart-icon;
+}
+
+.heartIconRegular:hover {
+    cursor: pointer;
+}
+
