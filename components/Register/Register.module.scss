@@ -1,0 +1,93 @@
+@use "../../styles/variables.module.scss" as *;
+
+.loginPageContainer {
+    display: flex;
+}
+
+.introContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 900px;
+    height: 100vh;
+    background: linear-gradient($blue, $dark-blue,)
+}
+
+.formContainer {
+  width: 400px;
+}
+
+.loginContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 100px;
+}
+
+.storeName,
+.description {
+    margin-left: 150px;
+    color: $white;
+}
+
+.storeName {
+    font-size: 40px;
+}
+
+.description {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.email,
+.password {
+    display: block;
+}
+
+.loginTitle {
+    font-size: 33px;
+    font-weight: bold;
+}
+
+.loginSubtitle {
+    font-size: 25px;
+    margin-bottom: 35px;
+}
+
+.email,
+.password,
+.loginBtn,
+.fullName,
+.phoneNumber
+{
+    padding: 20px 60px;
+    margin-bottom: 15px;
+    border-radius: 30px;
+    border: 1px solid $border-gray;
+}
+
+.loginBtn {
+    background-color: $blue;
+    color: $white;
+    width: 290px;
+}
+
+.loginBtn:hover {
+    cursor: pointer;
+}
+
+
+.inputContainer {
+    position: relative;
+}
+
+.faIcon {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    opacity: 0.4;
+}
+
+
+
+
