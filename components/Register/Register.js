@@ -1,6 +1,5 @@
 import { useState } from "react"
 import { useRouter } from "next/router"
-import { useForm } from "react-hook-form"
 import axios from "axios"
 import styles from "./Register.module.scss"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -10,7 +9,6 @@ import {
     faPhone
   } from "@fortawesome/free-solid-svg-icons"
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons"
-
 
 
 const Register = () => {
@@ -25,21 +23,13 @@ const Register = () => {
         setData({...data, [e.target.name]: e.target.value});
     }
 
-    let router = useRouter()
-
-    const redirect = () => {
-        router.push('/products')
-    }
- 
-
-    const handleSubmit = (e) => {
+    const onSubmit = (e) => {
         e.preventDefault();
-
         {
             axios.post("https://assignment-api.piton.com.tr/api/v1/user/register", {
-                name: data.name,
-                email: data.email,
-                password: data.password
+                name: "",
+                email: "",
+                password: ""
             })
             .then((res) => {
                 console.log("Server response: ", res);
@@ -50,7 +40,12 @@ const Register = () => {
         } 
     } 
 
+    let router = useRouter()
 
+    const redirect = () => {
+        router.push('/products')
+    }
+ 
     return (
         <div className={styles.loginPageContainer}>
             <div className={styles.introContainer}>
@@ -61,7 +56,7 @@ const Register = () => {
                 <p className={styles.loginTitle}>Hello!</p>
                 <p className={styles.loginSubtitle}>Sign Up to Get Started</p>
                 <div className={styles.formContainer}>
-                    <form className={styles.form} onSubmit={handleSubmit}>
+                    <form className={styles.form} onSubmit={onSubmit}>
                         <div className={styles.inputContainer}>
                             <FontAwesomeIcon icon={faUser} className={styles.faIcon}/>
                             <input 
@@ -79,11 +74,8 @@ const Register = () => {
                                     name="phone" 
                                     placeholder="Phone Number" 
                                     className={styles.phoneNumber} 
-                                    // pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
-                                    onChange={handleChange}
-                                    >
+                                    onChange={handleChange}>
                                 </input>
-
                             </div>
                         <div className={styles.inputContainer}>
                             <FontAwesomeIcon icon={faEnvelope} className={styles.faIcon}/>
@@ -93,7 +85,6 @@ const Register = () => {
                                     placeholder="Email Address" 
                                     className={styles.email}
                                     onChange={handleChange}>
-
                                 </input>
                             </div>
                         <div className={styles.inputContainer}>
@@ -107,14 +98,13 @@ const Register = () => {
                                 maxLength={20}
                                 className={styles.password}
                                 onChange={handleChange}>
-                            
                             </input>
                         </div>
                         <div className={styles.inputContainer}>
                             <FontAwesomeIcon icon={faLock} className={styles.faIcon}/>
                             <input 
                                 type="password" 
-                                name="password" 
+                                name="confirmPassword" 
                                 placeholder="Confirm Password" 
                                 pattern="[a-zA-Z0-9]{6,20}"
                                 minLength={6}
@@ -135,30 +125,4 @@ export default Register
 
 
 
-// REACT FORM HOOKS
 
-// const {register, handleSubmit, errors} = useForm()
-
-// const onSubmit = (data) => {
-//     axios.post("https://assignment-api.piton.com.tr/api/v1/user/register", data)
-//       .then((res) => {
-//           console.log("Server response: ", res);
-//       })
-//       .catch((err) => {
-//           console.log("Server respondend with error: ", err);
-//       })
-//   }
-  
-
-
-   // const {register, handleSubmit, errors} = useForm()
-
-    // const onSubmit = (data) => {
-    //     axios.post("https://assignment-api.piton.com.tr/api/v1/user/register", data)
-    //     .then((res) => {
-    //         console.log("Server response: ", res);
-    //     })
-    //     .catch((err) => {
-    //         console.log("Server respondend with error: ", err);
-    //     })
-    // }
