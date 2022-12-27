@@ -1,3 +1,10 @@
+Netlify link: https://urunkatalogprojesi.netlify.app/
+
+> used Next.js and SASS
+> created components for register, login, product list and product details
+> login and product details routing not available
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
