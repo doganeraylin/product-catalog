@@ -105,3 +105,135 @@
 .forgotPassword:hover {
     cursor: pointer;
 }
+
+
+
+// Media Queries 
+
+@media screen and (max-width:1000px) {
+    .storeName,
+    .description {
+         margin-left: 50px;
+    }
+    .formContainer {
+         max-width: 200px;
+    }
+     .email,
+     .password,
+     .loginBtn,
+     .fullName,
+     .phoneNumber {
+         padding: 15px 45px;
+     }
+ 
+     .loginPageContainer {
+         max-width: 800px;
+     }
+ 
+     .faIcon {
+         top: 15px;
+         left: 20px;
+     }
+ 
+     .loginBtn {
+         width: 265px;
+     }
+ 
+     .loginTitle {
+         font-size: 25px;
+         font-weight: bold;
+     }
+     
+     .loginSubtitle {
+         font-size: 15px;
+         margin-bottom: 20px;
+     }
+  
+ }
+ 
+ 
+ @media screen and (max-width: 800px){
+ 
+     .loginContainer {
+         margin-right: 150px;
+     }
+ 
+     .storeName,
+     .description {
+          margin-left: 30px;
+     }
+ 
+     .storeName {
+         font-size: 30px;
+     }
+ 
+     .description {
+         font-size: 15px;
+     }
+ 
+     .email,
+     .password,
+     .loginBtn,
+     .fullName,
+     .phoneNumber {
+         padding: 10px 35px;
+     }
+ 
+     .loginBtn {
+         width: 240px;
+     }
+ 
+     .faIcon {
+         top: 10px;
+         left: 15px;
+     }   
+ }
+ 
+ @media screen and (max-width: 600px) {
+     .introContainer {
+         padding-right: 50px;
+     }
+ 
+     .loginContainer {
+         margin-left: 50px;
+     }
+ 
+ }
+ 
+ @media screen and (max-width: 500px) {
+     .loginPageContainer {
+         flex-direction: column;
+         align-items: center;
+     }
+ 
+     .introContainer {
+         max-width: 500px;
+         max-height: 200px;
+         text-align: center;
+     }
+ 
+     .loginContainer {
+         width: 450px;
+         align-items: center;
+         margin: 0;
+     }
+ 
+     .email,
+     .password,
+     .loginBtn,
+     .fullName,
+     .phoneNumber {
+         padding: 20px 60px;
+     }
+ 
+     .loginBtn {
+         width: 290px;
+     }
+ 
+     .faIcon {
+         top: 20px;
+         left: 30px;
+     }
+ 
+ 
+ }
