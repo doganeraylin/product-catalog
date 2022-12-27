@@ -34,3 +34,12 @@
 .logOut:hover {
     cursor: pointer;
 }
+
+
+// Media Queries
+
+@media screen and (max-width: 550px) {
+    .headerContainer {
+        min-width: 550px;
+    }
+}
