@@ -1,4 +1,4 @@
-Netlify link: https://urunkatalogprojesi.netlify.app/
+##  Netlify link: https://urunkatalogprojesi.netlify.app/
 
 * used Next.js and SASS
 * created components for register, login, product list and product details
