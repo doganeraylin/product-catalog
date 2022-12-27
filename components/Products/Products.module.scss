@@ -1,29 +1,37 @@
 @use "../../styles/variables.module.scss" as *;
 
-.productsContainer{
+.productList {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.productContainer{
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     text-align: center;
-    max-width: 300px;
-    margin: 50px 80px;
+    align-self: flex-start;
+    min-width: 300px;
+    margin: 50px auto;
     padding: 50px 0px 0px;
     border: 1px solid $border-gray;
     border-radius: 30px;
     position: relative;
 }
 
-
 .productImg {
     max-width: 100%;
     width: 200px;
-    margin: 5px;
+    margin: 5px auto;
     box-shadow: 3px 4px 3px 4px $shadow-gray;
 }
 
 .productName {
     width: 200px;
-    margin: 10px auto;
-  
+    margin: 10px auto; 
 }
 
 .productPrice {
@@ -50,3 +58,26 @@
     cursor: pointer;
 }
 
+.aLink {
+    text-decoration: none;
+    color: black;
+}
+
+.aLink:hover {
+    cursor: pointer;
+}
+
+
+
+@media screen and (max-width: 550px) {
+
+    .productList {
+        min-width: 550px;
+    }
+
+    .productContainer {
+        min-width: 300px;
+        margin: 20px auto;
+       
+    }
+}
