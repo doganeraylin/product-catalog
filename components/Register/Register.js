@@ -1,3 +1,7 @@
+import { useState } from "react"
+import { useRouter } from "next/router"
+import { useForm } from "react-hook-form"
+import axios from "axios"
 import styles from "./Register.module.scss"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
@@ -5,9 +9,48 @@ import {
     faLock,
     faPhone
   } from "@fortawesome/free-solid-svg-icons"
-  import { faEnvelope } from "@fortawesome/free-regular-svg-icons"
+import { faEnvelope } from "@fortawesome/free-regular-svg-icons"
+
+
 
 const Register = () => {
+
+    const [ data, setData ] = useState({
+        name: "",
+        email: "",
+        password: "",
+    });
+
+    const handleChange = (e) => {
+        setData({...data, [e.target.name]: e.target.value});
+    }
+
+    let router = useRouter()
+
+    const redirect = () => {
+        router.push('/products')
+    }
+ 
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        {
+            axios.post("https://assignment-api.piton.com.tr/api/v1/user/register", {
+                name: data.name,
+                email: data.email,
+                password: data.password
+            })
+            .then((res) => {
+                console.log("Server response: ", res);
+            })
+            .catch((err) => {
+                console.log("Server respondend with error: ", err);
+            })
+        } 
+    } 
+
+
     return (
         <div className={styles.loginPageContainer}>
             <div className={styles.introContainer}>
@@ -18,34 +61,41 @@ const Register = () => {
                 <p className={styles.loginTitle}>Hello!</p>
                 <p className={styles.loginSubtitle}>Sign Up to Get Started</p>
                 <div className={styles.formContainer}>
-                    <form className={styles.form}>
+                    <form className={styles.form} onSubmit={handleSubmit}>
                         <div className={styles.inputContainer}>
                             <FontAwesomeIcon icon={faUser} className={styles.faIcon}/>
                             <input 
-                                type="text" name="fullName" 
+                                type="text" 
+                                name="fullName" 
                                 placeholder="Full Name" 
-                                className={styles.fullName}>
+                                className={styles.fullName}
+                                onChange={handleChange}>
                             </input>
                         </div>
                         <div className={styles.inputContainer}>
-                        <FontAwesomeIcon icon={faPhone} className={styles.faIcon}/>
-                            <input 
-                                type="tel" 
-                                name="phone" 
-                                placeholder="Phone Number" 
-                                className={styles.phoneNumber} 
-                                pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
-                            </input>
-                        </div>
+                            <FontAwesomeIcon icon={faPhone} className={styles.faIcon}/>
+                                <input 
+                                    type="tel" 
+                                    name="phone" 
+                                    placeholder="Phone Number" 
+                                    className={styles.phoneNumber} 
+                                    // pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+                                    onChange={handleChange}
+                                    >
+                                </input>
+
+                            </div>
                         <div className={styles.inputContainer}>
-                        <FontAwesomeIcon icon={faEnvelope} className={styles.faIcon}/>
-                            <input 
-                                type="email" 
-                                name="email" 
-                                placeholder="Email Address" 
-                                className={styles.email}>
-                            </input>
-                        </div>
+                            <FontAwesomeIcon icon={faEnvelope} className={styles.faIcon}/>
+                                <input 
+                                    type="email" 
+                                    name="email" 
+                                    placeholder="Email Address" 
+                                    className={styles.email}
+                                    onChange={handleChange}>
+
+                                </input>
+                            </div>
                         <div className={styles.inputContainer}>
                             <FontAwesomeIcon icon={faLock} className={styles.faIcon}/>
                             <input 
@@ -55,7 +105,9 @@ const Register = () => {
                                 pattern="[a-zA-Z0-9]{6,20}"
                                 minLength={6}
                                 maxLength={20}
-                                className={styles.password}>
+                                className={styles.password}
+                                onChange={handleChange}>
+                            
                             </input>
                         </div>
                         <div className={styles.inputContainer}>
@@ -67,10 +119,11 @@ const Register = () => {
                                 pattern="[a-zA-Z0-9]{6,20}"
                                 minLength={6}
                                 maxLength={20}
-                                className={styles.password}>
+                                className={styles.password}
+                                onChange={handleChange}>
                             </input>
                         </div>
-                        <button type="submit" className={styles.loginBtn}>Register</button>
+                        <button type="submit" className={styles.loginBtn} onClick={redirect}>Register</button>
                     </form>
                 </div>  
             </div>
@@ -78,3 +131,34 @@ const Register = () => {
     )
 }
 export default Register
+
+
+
+
+// REACT FORM HOOKS
+
+// const {register, handleSubmit, errors} = useForm()
+
+// const onSubmit = (data) => {
+//     axios.post("https://assignment-api.piton.com.tr/api/v1/user/register", data)
+//       .then((res) => {
+//           console.log("Server response: ", res);
+//       })
+//       .catch((err) => {
+//           console.log("Server respondend with error: ", err);
+//       })
+//   }
+  
+
+
+   // const {register, handleSubmit, errors} = useForm()
+
+    // const onSubmit = (data) => {
+    //     axios.post("https://assignment-api.piton.com.tr/api/v1/user/register", data)
+    //     .then((res) => {
+    //         console.log("Server response: ", res);
+    //     })
+    //     .catch((err) => {
+    //         console.log("Server respondend with error: ", err);
+    //     })
+    // }
