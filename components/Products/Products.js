@@ -52,7 +52,7 @@ useEffect(() => {
                         <FontAwesomeIcon icon={icon} onClick={handleLike} className={styles.heartIconRegular}/>
                         <Link href={"/products/" + product.id} key={product.id} legacyBehavior>
                             <a className={styles.aLink}>
-                                <img src="/book-cover.jpg" className={styles.productImg}></img>
+                                <img src={product.img} className={styles.productImg}></img>
                             </a>
                         </Link>
                         <Link href={"/products/" + product.id} key={product.id} legacyBehavior>
