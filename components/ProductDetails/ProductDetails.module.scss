@@ -46,9 +46,73 @@
 .heartIconSolid span {
     color: $red;
     margin-left: 10px;
+    position: absolute;
 }
 
 .heartIconSolid span:hover {
     cursor: pointer;
 }
 
+// Media Queries
+
+@media screen and (max-width: 1045px) {
+    .productDetailsContainer {
+        max-width: 800px;
+    }
+
+    .productPrice {
+        max-width: 130px;
+        bottom: 15px;
+        font-size: 20px;
+    }
+
+    .productImg {
+        align-self: center;
+    }
+
+    .productName {
+        margin-bottom: 10px;
+    }
+
+    .productDescription {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .productImg {
+        align-self: center;
+    }
+
+    .productName {
+        font-size: 20px;
+    }
+
+    .productDescription {
+        font-size: 11px;
+    }
+
+    .productImg {
+        max-width: 200px;
+    }
+
+    .productPrice {
+        max-width: 80px;
+        padding: 3px 0;
+        bottom: 15px;
+        font-size: 15px;
+    }
+
+}
+
+@media screen and (max-width: 540px) {
+    .productDetailsContainer {
+        flex-direction: column;
+        border: 2px solid red;
+    }
+
+    .productTextContainer {
+      margin: 10px 0;
+    }
+   
+}
