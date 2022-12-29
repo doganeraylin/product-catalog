@@ -15,8 +15,8 @@ const Register = () => {
 
     const [ data, setData ] = useState({
         name: "",
-        email: "",
         password: "",
+        email: ""
     });
 
     const handleChange = (e) => {
@@ -27,12 +27,13 @@ const Register = () => {
         e.preventDefault();
         {
             axios.post("https://assignment-api.piton.com.tr/api/v1/user/register", {
-                name: "",
-                email: "",
-                password: ""
+                name: data.name,
+                password: data.password,
+                email: data.email
             })
             .then((res) => {
                 console.log("Server response: ", res);
+                console.log(data.name)
             })
             .catch((err) => {
                 console.log("Server respondend with error: ", err);
@@ -60,8 +61,9 @@ const Register = () => {
                         <div className={styles.inputContainer}>
                             <FontAwesomeIcon icon={faUser} className={styles.faIcon}/>
                             <input 
+                                value={data.name}
                                 type="text" 
-                                name="fullName" 
+                                name="name" 
                                 placeholder="Full Name" 
                                 className={styles.fullName}
                                 onChange={handleChange}>
@@ -80,6 +82,7 @@ const Register = () => {
                         <div className={styles.inputContainer}>
                             <FontAwesomeIcon icon={faEnvelope} className={styles.faIcon}/>
                                 <input 
+                                    value={data.email}
                                     type="email" 
                                     name="email" 
                                     placeholder="Email Address" 
@@ -90,6 +93,7 @@ const Register = () => {
                         <div className={styles.inputContainer}>
                             <FontAwesomeIcon icon={faLock} className={styles.faIcon}/>
                             <input 
+                                value={data.password}
                                 type="password" 
                                 name="password" 
                                 placeholder="Password" 
