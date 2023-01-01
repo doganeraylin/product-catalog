@@ -1,30 +1,52 @@
 import { useState } from "react"
 import axios from "axios"
+import { setCookie, parseCookies } from 'nookies';
+import { useRouter } from "next/router"
 import styles from "./Login.module.scss"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLock } from "@fortawesome/free-solid-svg-icons"
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons"
 
 const Login = () => {
+    const router = useRouter()
+    const [redirect, setRedirect] = useState(false)
+    const cookies = parseCookies()
+    const storedEmail = cookies.email
+    const storedPassword = cookies.password
+    const rememberMe = true
 
     const [ data, setData ] = useState({
-        email: "",
-        password: "",
+        email: storedEmail || '',
+        password: storedPassword || '',
         });
-
+    
+   
     const handleChange = (e) => {
-        setData({...data, [e.target.name]: e.target.value});
+        if (e.target.name === 'rememberMe') {
+            setData({ ...data, rememberMe: e.target.checked });
+        } else {
+            setData({...data, [e.target.name]: e.target.value});
+        }
     }
 
     const onSubmit = (e) => {
         e.preventDefault();
+     
+        if (rememberMe) {
+            setCookie(null, 'email', data.email, { maxAge: 30 * 24 * 60 * 60 });
+            setCookie(null, 'password', data.password, { maxAge: 30 * 24 * 60 * 60 });
+        }
+
         {
             axios.post("https://assignment-api.piton.com.tr/api/v1/user/login", {
-                email: "",
-                password: ""
+                email: data.email,
+                password: data.password
             })
             .then((res) => {
                 console.log("Server response: ", res);
+                setRedirect(true)
+                router.push('/products')
+                console.log(data.email)
             })
             .catch((err) => {
                 console.log("Server respondend with error: ", err);
@@ -46,6 +68,7 @@ const Login = () => {
                         <div className={styles.inputContainer}>
                             <FontAwesomeIcon icon={faEnvelope} className={styles.faIcon}/>
                             <input 
+                                value={data.email}
                                 type="email" 
                                 name="email" className={styles.email} 
                                 placeholder="Email Address"
@@ -55,6 +78,7 @@ const Login = () => {
                         <div className={styles.inputContainer}>
                             <FontAwesomeIcon icon={faLock} className={styles.faIcon}/>
                             <input 
+                                value={data.password}
                                 type="password" 
                                 name="password" 
                                 placeholder="Password" 
@@ -67,8 +91,8 @@ const Login = () => {
                 </div>
                 <div className={styles.forgotAndRemember}>
                     <p className={styles.forgotPassword}>Forgot Password</p>
-                    <label className={styles.rememberMe}>
-                        <input type="checkbox" className={styles.rememberMe}/> Remember me
+                    <label for="rememberMe" className={styles.rememberMe}>
+                        <input type="checkbox" name="rememberMe" className={styles.rememberMe}/> Remember me
                     </label>
                 </div>
             </div>
