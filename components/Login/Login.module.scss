@@ -91,11 +91,11 @@
 }
 
 
-.forgotAndRemember {
+.rememberMeContainer {
     display: flex;
-    justify-content: space-between;
-    width: 280px;
-    margin-top: 20px;
+    flex-direction: column;
+    text-align: center;
+    width: 280px;  
 }
 
 .forgotPassword {
@@ -103,6 +103,15 @@
 }
 
 .forgotPassword:hover {
+    cursor: pointer;
+}
+
+.aLink {
+    text-decoration: none;
+    color: $link-gray
+}
+
+.aLink:hover {
     cursor: pointer;
 }
 
