@@ -1,9 +1,8 @@
+import Header from "../Header/Header"
+import styles from "./Products.module.scss"
 import axios from "axios"
 import  Link  from "next/link"
-import styles from "./Products.module.scss"
-import Header from "../Header/Header"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
 import { faHeart as faFileSolid } from "@fortawesome/free-solid-svg-icons"
 import { faHeart as faFileRegular } from "@fortawesome/free-regular-svg-icons"
 import { useEffect, useState } from "react";
@@ -18,9 +17,9 @@ const Products = () => {
     const handleLike = () => {
         if (icon === faFileRegular) {
             setIcon(faFileSolid);
-          } else {
+        } else {
             setIcon(faFileRegular);
-          }
+        }
     }
 
     const fetchData = async () => {
@@ -49,7 +48,11 @@ useEffect(() => {
             {products.map((product) => {
                 return (
                     <div className={styles.productContainer}>
-                        <FontAwesomeIcon icon={icon} onClick={handleLike} className={styles.heartIconRegular}/>
+                        <FontAwesomeIcon 
+                            icon={icon} 
+                            onClick={handleLike} 
+                            className={icon === faFileSolid ? styles.heartIconSolid : styles.heartIconRegular}
+                        />
                         <Link href={"/products/" + product.id} key={product.id} legacyBehavior>
                             <a className={styles.aLink}>
                                 <img src={product.img} className={styles.productImg}></img>
