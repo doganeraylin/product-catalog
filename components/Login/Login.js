@@ -1,8 +1,9 @@
+import styles from "./Login.module.scss"
 import { useState } from "react"
+import { useRouter } from "next/router"
+import Link from "next/link"
 import axios from "axios"
 import { setCookie, parseCookies } from 'nookies';
-import { useRouter } from "next/router"
-import styles from "./Login.module.scss"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLock } from "@fortawesome/free-solid-svg-icons"
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons"
@@ -13,7 +14,7 @@ const Login = () => {
     const cookies = parseCookies()
     const storedEmail = cookies.email
     const storedPassword = cookies.password
-    const rememberMe = true
+    const [rememberMe, setRememberMe] = useState(false)
 
     const [ data, setData ] = useState({
         email: storedEmail || '',
@@ -23,6 +24,7 @@ const Login = () => {
    
     const handleChange = (e) => {
         if (e.target.name === 'rememberMe') {
+            setRememberMe(true)
             setData({ ...data, rememberMe: e.target.checked });
         } else {
             setData({...data, [e.target.name]: e.target.value});
@@ -89,12 +91,16 @@ const Login = () => {
                         <button type="submit" className={styles.loginBtn}>Login</button>
                     </form>
                 </div>
-                <div className={styles.forgotAndRemember}>
-                    <p className={styles.forgotPassword}>Forgot Password</p>
+                <div className={styles.rememberMeContainer}>
                     <label for="rememberMe" className={styles.rememberMe}>
                         <input type="checkbox" name="rememberMe" className={styles.rememberMe}/> Remember me
                     </label>
+                    <Link href={"/register"} legacyBehavior>
+                      <a className={styles.aLink}>Create a new account</a>
+                    </Link>
+                
                 </div>
+         
             </div>
         </div>
     )
