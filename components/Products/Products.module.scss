@@ -47,12 +47,17 @@
     margin-bottom: 15px;
 }
 
-.heartIconRegular {
+.heartIconRegular,
+.heartIconSolid {
     position: absolute;
     right: 25px;
     top: 20px;
     font-size: 22px;
     color: $heart-icon;
+}
+
+.heartIconSolid {
+    color: $red;
 }
 
 .heartIconRegular:hover {
