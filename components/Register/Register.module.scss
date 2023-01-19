@@ -96,6 +96,19 @@
     margin: 0 10px 15px;
 }
 
+.aLink {
+    display: block;
+    text-decoration: none;
+    color: $link-gray;
+    text-align: center;
+    width: 290px;
+    font-weight: bold;
+}
+
+.aLink:hover {
+    cursor: pointer;
+}
+
 
 // Media Queries 
 
