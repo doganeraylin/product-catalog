@@ -1,8 +1,9 @@
+import styles from "./Register.module.scss"
 import { useState } from "react"
 import { useRouter } from "next/router"
+import { useForm } from "react-hook-form"
+import Link from "next/link"
 import axios from "axios"
-import { set, useForm } from "react-hook-form"
-import styles from "./Register.module.scss"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
     faUser,
@@ -121,6 +122,9 @@ const Register = () => {
                         </div> */}
                         <button type="submit" className={styles.loginBtn}>Register</button>
                     </form>
+                    <Link href={"/login"}legacyBehavior>
+                        <a className={styles.aLink}>Login</a>
+                    </Link>
                 </div>  
             </div>
         </div>
