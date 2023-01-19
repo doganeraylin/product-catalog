@@ -13,13 +13,15 @@ const Products = () => {
     const baseURL = 'https://assignment-api.piton.com.tr/api/v1/product/all';
     const [products, setProducts] = useState([]);
     const [icon, setIcon] = useState(faFileRegular)
+    const [selectedId, setSelectedId] = useState()
 
-    const handleLike = () => {
-        if (icon === faFileRegular) {
-            setIcon(faFileSolid);
-        } else {
-            setIcon(faFileRegular);
+    const handleLike = (id) => {
+        setProducts(prevProducts => prevProducts.map(product => {
+        if (product.id === id) {
+            return { ...product, selected: !product.selected };
         }
+        return product;
+    }));
     }
 
     const fetchData = async () => {
@@ -30,7 +32,6 @@ const Products = () => {
             }
         };
         const response = await axios.get(baseURL, config);
-        console.log(response);
         setProducts(response.data.products)
         } catch (error) {
         console.log(error.response);
@@ -47,18 +48,19 @@ useEffect(() => {
         <div className={styles.productList}>
             {products.map((product) => {
                 return (
-                    <div className={styles.productContainer}>
-                        <FontAwesomeIcon 
-                            icon={icon} 
-                            onClick={handleLike} 
-                            className={icon === faFileSolid ? styles.heartIconSolid : styles.heartIconRegular}
-                        />
-                        <Link href={"/products/" + product.id} key={product.id} legacyBehavior>
+                    <div className={styles.productContainer} key={product.id}>
+                       
+                         <FontAwesomeIcon 
+                            icon={product.selected ? faFileSolid : faFileRegular} 
+                            onClick={() => handleLike(product.id)} 
+                            className={product.selected ? styles.heartIconSolid : styles.heartIconRegular}
+                         />
+                        <Link href={"/products/" + product.id}  legacyBehavior>
                             <a className={styles.aLink}>
-                                <img src={product.img} className={styles.productImg}></img>
+                                <img src={product.image} className={styles.productImg}></img>
                             </a>
                         </Link>
-                        <Link href={"/products/" + product.id} key={product.id} legacyBehavior>
+                        <Link href={"/products/" + product.id}  legacyBehavior>
                             <a className={styles.aLink}>
                                 <p className={styles.productName}>{product.name}</p>
                             </a>
