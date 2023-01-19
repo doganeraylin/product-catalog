@@ -11,7 +11,7 @@ const ProductDetails = (props) => {
     const accessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN0cmluZyIsImlhdCI6MTY0OTg2MDExMiwiZXhwIjoxNjc1NzgwMTEyfQ.z8XYELsP1GBKkGpyvI14WzJKQAAbtQUwCl3hlLs_U4M"
     const baseURL = 'https://assignment-api.piton.com.tr/api/v1/product/all';
     const [products, setProducts] = useState([]);
-
+ 
     const fetchData = async () => {
         try {
         const config = {
@@ -21,6 +21,7 @@ const ProductDetails = (props) => {
         };
         const response = await axios.get(baseURL, config);
         setProducts(response.data.products)
+        console.log(products)
         } catch (error) {
         console.log(error.response);
         }
@@ -30,13 +31,11 @@ const ProductDetails = (props) => {
         fetchData()
     }, [])
 
-
-
     return (
         <>  
             <Header />
-                <div className={styles.productDetailsContainer} key={props.id}>
-                <img src={props.img} className={styles.productImg}></img>
+            <div className={styles.productDetailsContainer}>
+                <img src={props.image} className={styles.productImg}></img>
                 <div className={styles.productTextContainer}>
                     <p className={styles.heartIconSolid}>{props.likes} likes<span><FontAwesomeIcon icon={faFileSolid} className={styles.heartIconSolid}/></span></p>
                     <p className={styles.productName}>{props.name}</p>
