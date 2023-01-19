@@ -15,8 +15,8 @@ export const getStaticPaths = async () => {
   
     const response = await axios.get(baseURL, config);
     const productsData = response.data.products;
-
-    const paths = productsData.map(product => {
+    const sortedProductsData = productsData.sort((a, b) => a.id - b.id); // sort the array by the id field in ascending order
+    const paths = sortedProductsData.map(product => {
       return {
         params: { id: product.id.toString() }
       }
@@ -50,14 +50,15 @@ export const getStaticPaths = async () => {
  }
 
 const Details = ({product}) => {
+  console.log(product.id)
     return (
       <ProductDetails
         id={product.id}
         name={product.name}
         description={product.description}
-        likes={product.likes}
+        likes={product.likes.length}
         price={product.price}
-        img={product.img}
+        image={product.image}
       />
     )
 }
