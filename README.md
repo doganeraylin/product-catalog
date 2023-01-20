@@ -1,4 +1,4 @@
-##  Netlify link: https://urunkatalogprojesi.netlify.app/
+##  Project Link: https://urunkatalogprojesi.netlify.app/
 
 ------------------------------------------------
 ## [SCREENSHOTS]
