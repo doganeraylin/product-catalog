@@ -3,15 +3,15 @@
 ------------------------------------------------
 ### Description
 
-* this project is built using Next.js and SASS for styling. 
-* the design is fully responsive.
-* the initial page is a registration form with form validation to ensure the accuracy of user input. 
+* this project is built using **Next.js** and **SASS** for styling. 
+* the design is **fully responsive**.
+* the initial page is a registration form with **form validation** to ensure the accuracy of user input. 
 * upon successful registration, the user is redirected to the main page where a list of products is displayed. 
 * users can click on a product to view more details and can like/unlike a product. 
 * the user can log out and be redirected to the login page. 
 * the project also includes a feature to save login information by clicking the 'remember me' button. 
-* the React Hook Form package was used for handling form-related functionality
-* used Axios to handle the GET and POST methods for retrieving product data and posting registration and login information. 
+* the **React Hook Form** package was used for handling form-related functionality
+* used **Axios** to handle the GET and POST methods for retrieving product data and posting registration and login information. 
 
 
 ### Screenshots
