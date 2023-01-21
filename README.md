@@ -1,4 +1,4 @@
-## Live Link: https://urunkatalogprojesi.netlify.app/
+## Live Link: https://product-catalog.netlify.app/
 
 ------------------------------------------------
 ### Description
