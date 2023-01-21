@@ -1,6 +1,32 @@
-##  Netlify link: https://urunkatalogprojesi.netlify.app/
+##  Project Link: https://urunkatalogprojesi.netlify.app/
 
 ------------------------------------------------
+## [SCREENSHOTS]
+
+#### Register Page
+![register page](https://user-images.githubusercontent.com/102012491/213711157-240b49c6-250b-48b3-8b33-e9b9302a6cdf.png)
+
+#### Form Validation
+![form validation](https://user-images.githubusercontent.com/102012491/213711641-f2609a36-c1aa-4ee1-8d03-1f12dbf91d30.png)
+![form validation 2](https://user-images.githubusercontent.com/102012491/213711670-1bbc431c-c22c-4f77-935c-30f742c096db.png)
+
+#### Product List
+
+![product list](https://user-images.githubusercontent.com/102012491/213711761-6b7c3696-f101-4ad2-b53d-04755a8587ec.png)
+
+#### Product Details Page
+
+![product details](https://user-images.githubusercontent.com/102012491/213711999-a4d8195f-bb50-4ef0-9ab5-3f34a507b93a.png)
+
+#### Login Page
+![indir](https://user-images.githubusercontent.com/102012491/213712095-8e77697d-b88f-4b56-9a9e-4c6fba4efc18.png)
+
+
+
+
+
+
+
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
