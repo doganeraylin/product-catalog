@@ -10,7 +10,6 @@ const Header = () => {
     }
 
     const redirectToMainPage = () => {
-        console.log("clicked")
         router.push('/products')
     }
 
