@@ -15,7 +15,7 @@ const Header = () => {
 
     return (
         <div className={styles.headerContainer}>
-            <h1 className={styles.logo} onClick={redirectToMainPage}>Piton<span className={styles.logoSpan}>Shop</span></h1>
+            <h1 className={styles.logo} onClick={redirectToMainPage}>Book<span className={styles.logoSpan}>Shop</span></h1>
             <button className={styles.logOut} onClick={logOut}>Logout</button>
         </div>
     )

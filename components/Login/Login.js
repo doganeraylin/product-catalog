@@ -59,7 +59,7 @@ const Login = () => {
     return (
         <div className={styles.loginPageContainer}>
             <div className={styles.introContainer}>
-                <h1 className={styles.storeName}>PitonShop</h1>
+                <h1 className={styles.storeName}>BookShop</h1>
                 <p className={styles.description}>The most popular book shop for IT</p>
             </div>
             <div className={styles.loginContainer}>
