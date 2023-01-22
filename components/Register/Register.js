@@ -46,7 +46,7 @@ const Register = () => {
     return (
         <div className={styles.loginPageContainer}>
             <div className={styles.introContainer}>
-                <h1 className={styles.storeName}>PitonShop</h1>
+                <h1 className={styles.storeName}>BookShop</h1>
                 <p className={styles.description}>The most popular book shop for IT</p>
             </div>
             <div className={styles.loginContainer}>
@@ -65,17 +65,6 @@ const Register = () => {
                                 })}>
                             </input>
                         </div>
-                        {/* <div className={styles.inputContainer}>
-                            <FontAwesomeIcon icon={faPhone} className={styles.faIcon}/>
-                                <input 
-                                    type="tel" 
-                                    name="phone" 
-                                    placeholder="Phone Number" 
-                                    className={styles.phoneNumber} 
-                                    // onChange={handleChange}
-                                    >
-                                </input>
-                        </div> */}
                         <div className={styles.inputContainer}>
                             <FontAwesomeIcon icon={faEnvelope} className={styles.faIcon}/>
                                 <input 
@@ -109,17 +98,6 @@ const Register = () => {
                                 <p className={styles.errorMsg}>It must be between 6-20 characters, use at least one letter and one number</p>
                             )}
                         </div>
-                        {/* <div className={styles.inputContainer}>
-                            <FontAwesomeIcon icon={faLock} className={styles.faIcon}/>
-                            <input 
-                                type="password" 
-                                name="confirmPassword" 
-                                placeholder="Confirm Password" 
-                                className={styles.password}
-                                // onChange={handleChange}
-                                >
-                            </input>
-                        </div> */}
                         <button type="submit" className={styles.loginBtn}>Register</button>
                     </form>
                     <Link href={"/login"}legacyBehavior>
