@@ -169,22 +169,21 @@
  
      .storeName,
      .description {
-          margin-left: 30px;
+          margin-left: 35px;
      }
  
      .storeName {
-         font-size: 30px;
+         font-size: 25px;
      }
  
      .description {
-         font-size: 15px;
+         font-size: 10px;
      }
  
      .email,
      .password,
-     .loginBtn,
-     .fullName,
-     .phoneNumber {
+     .loginBtn
+    {
          padding: 10px 35px;
      }
  
@@ -196,6 +195,11 @@
          top: 10px;
          left: 15px;
      }   
+
+    .rememberMeContainer {
+        width: 250px;
+        font-size: 12px;
+    }
  }
  
  @media screen and (max-width: 600px) {
@@ -212,7 +216,6 @@
  @media screen and (max-width: 500px) {
      .loginPageContainer {
          flex-direction: column;
-         align-items: center;
      }
  
      .introContainer {
@@ -224,25 +227,30 @@
      .loginContainer {
          width: 450px;
          align-items: center;
-         margin: 0;
+         margin: 25px 0;
      }
  
      .email,
      .password,
-     .loginBtn,
-     .fullName,
-     .phoneNumber {
+     .loginBtn
+     {
          padding: 20px 60px;
      }
  
-     .loginBtn {
+    .loginBtn {
          width: 290px;
      }
  
-     .faIcon {
+    .faIcon {
          top: 20px;
          left: 30px;
      }
+
+    .rememberMeContainer {
+        width: 200px;
+        font-size: 15px;
+        margin-left: 80px;
+    }
  
  
  }
